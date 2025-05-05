@@ -94,9 +94,9 @@ def make_pdf(input_image_path, inter_dir):
     json_output_path = f'{int_file_path}.json'
     int_file_path = f'{int_file_path}.jpg'
 
-    print("input_image_path:" ,input_image_path)
     image = preprocess_image_for_ocr(input_image_path)
     plt.imsave(int_file_path, image, cmap='gray')
+    print(f'Intermediary image saved in: {int_file_path}')
     result = list(detect_and_recognize_words_with_positions(int_file_path))
 
     # Save the result to a JSON file

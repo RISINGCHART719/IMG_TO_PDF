@@ -118,11 +118,12 @@ for file in os.listdir(user_input_dir):
         print(f"Deleted original: {file}")
 
 
-# step to segment
+# emoving files in the inter_dir directory
+for filename in os.listdir('inter_dir/'):
+    file_path = os.path.join('inter_dir/', filename)
+    if os.path.isfile(file_path) or os.path.islink(file_path):
+        os.remove(file_path)
 
-# compute digital text from written text using trained OCR model
-
-# group words into lines based on y level
 
 # generate pdf!
 merged_pdf = fitz.open()
@@ -134,5 +135,6 @@ for file in os.listdir(user_input_dir):
 
 merged_pdf.save('output_dir/result.pdf')
 merged_pdf.close() 
+print(f'Finished. Saved Result in: output_dir/result.pdf')
         
     
