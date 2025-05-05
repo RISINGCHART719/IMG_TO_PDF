@@ -1,0 +1,30 @@
+#data.ipynb
+- we need to perform some sort of preprocessing
+
+#important variables
+folder_names - contains the folders names (key)
+data - use folder_names "key" to obtain the list of images of folder
+
+# important function
+- get_images_in_folder
+example: (2 ways)
+test_000_text = get_images_in_folder(data, '000')
+test_000 = get_images_in_folder(data, folder_names[0])
+
+example:
+len(data[folder_names[0]]) ~ outputs the number of images in folder '000'
+
+list_of_images_in_folder = get_images_in_folder(data[folder_names[0]])
+
+
+todo:
+- enhances the images for the best segmentation and classification results
+- segment the paper,
+- recognizer (extract text from and position)
+- font conversion from user handwritten to desired font
+- regenerate using the gather data (make searchable text) [import fitz]~pyMuPDF
+
+
+order:
+ocr_training
+
